@@ -7,7 +7,7 @@ router.route('/user')
 
 router.route('/user/:id')
 	.get(userController.show)
-	.put(userController.edit)
+	.put(userController.update)
 	.delete(userController.delete);
 
 module.exports = router;
