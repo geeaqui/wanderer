@@ -13,8 +13,6 @@ app.use(express.static(__dirname + '/public'));
 // tell express to use ejs for rendering templates
 app.set('view engine' , 'ejs');
 
-
-var routes = require('./config/routes');
 app.use("/api", routes);
 
 app.get('/', function(req, res){
@@ -22,6 +20,6 @@ app.get('/', function(req, res){
 });
 
 //server port
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
 	console.log('app is listening at port 3000');
 });
