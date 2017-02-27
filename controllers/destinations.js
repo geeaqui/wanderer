@@ -1,5 +1,16 @@
+var Destination = require('../models/destination');
+var User = require('../models/user');
+
 function indexDestination(req, res){
-	res.redirect('/');
+	User.findById(req.user._id).populate('destinations').exec(function(err, user){
+		if(err) return res.status(500).send(err);
+	});
+
+	res.render('destination/index',{
+		title: "Destinations",
+		destinations: user.destinations
+
+	});
 }
 
 function showDestination(req, res){
