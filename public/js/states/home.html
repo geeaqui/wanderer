@@ -1,0 +1,27 @@
+<div id="convicts">
+	<h1>All Criminals</h1>
+
+	<ul ng-init="ctrl.getTrips()">
+		<li ng-repeat="convict in ctrl.all">
+			<div>
+				<span>Name: </span>
+				<a ui-sref="show({id:convict._id})">{{convict.name}}</a>
+			</div>
+			<div>
+				<span>Location: </span>
+				{{convict.location}}
+			</div>
+			<div>
+				<span>Status: </span>
+				{{convict.status}}
+			</div>
+			<div>
+				<span>Description: </span>
+				{{convict.desc}}
+			</div>
+
+			<button ng-click="ctrl.deleteCriminal(convict._id)">DELETE</button>
+			<button ui-sref="edit">Edit</button>
+		</li>
+	</ul>
+</div>
