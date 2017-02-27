@@ -29,9 +29,6 @@ function deleteDestination(req, res){
 module.exports = {
 	index : indexDestination,
 	show : showDestination,
-	edit : editDestination,
-	new : newDestination,
-	create : createDestination,
 	update : updateDestination,
 	delete : deleteDestination
 }

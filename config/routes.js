@@ -1,21 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var destinationsController = require('../controllers/destinations');
+var userController = require('../controllers/user');
 
-//destinations
-router.route('/')
-	.get(destinationsController.index)
-	.post(destinationsController.create);
+router.route('/user')
+	.get(userController.index);
 
-router.route('/new')
-	.get(destinationsController.new);
-
-router.route('/:id')
-	.get(destinationsController.show)
-	.put(destinationsController.update)
-	.delete(destinationsController.delete);
-
-router.route('/:id/edit')
-	.get(destinationsController.edit);
+router.route('/user/:id')
+	.get(userController.show)
+	.put(userController.edit)
+	.delete(userController.delete);
 
 module.exports = router;
