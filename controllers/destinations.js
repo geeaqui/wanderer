@@ -25,3 +25,14 @@ function updateDestination(req, res){
 function deleteDestination(req, res){
 	res.redirect('/');
 }
+
+
+module.exports = {
+	index : indexDestination,
+	show : showDestination,
+	edit : editDestination,
+	new : newDestination,
+	create : createDestination,
+	update : updateDestination,
+	delete : deleteDestination
+}
