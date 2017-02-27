@@ -1,11 +1,11 @@
+var ejs = require('ejs');
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
-var layouts = require('express-ejs-layouts');
 var routes = require('./config/routes');
 
 // connect to the database
-mongoose.connect('mongodb://localhost/posts');
+mongoose.connect(process.env.MONGOLAB_URI ||'mongodb://localhost/destinations');
 
 //create a public folder to import local files
 app.use(express.static(__dirname + '/public'));
@@ -13,11 +13,13 @@ app.use(express.static(__dirname + '/public'));
 // tell express to use ejs for rendering templates
 app.set('view engine' , 'ejs');
 
-// use express layouts middleware too
-app.use(layouts);
 
-//router
+var routes = require('./config/routes');
 app.use("/api", routes);
+
+app.get('/', function(req, res){
+  res.render('index.html.ejs')
+});
 
 //server port
 app.listen(3000, function(){

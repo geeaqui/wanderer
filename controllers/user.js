@@ -2,7 +2,7 @@ var Destination = require('../models/destination');
 var User = require('../models/user');
 
 function indexDestination(req, res){
-	User.find({} , function(err, destinations) {
+	Destination.find({} , function(err, destinations) {
     if(err) res.status(500).json({error: err.message});
     // data return so now we can render
     res.status(200).json(destinations);
