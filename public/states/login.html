@@ -8,8 +8,9 @@
 			Password: <input type="password" ng-model="auth.password">
 		</div>
 
-		<div class="col m6 offset-m6">
-			<button ng-click="auth.signIn()">Log-in</button>
+		<div class="col m2 offset-m5">
+		<!-- <button ng-click="auth.signIn()">Log-in</button> -->
+			<button class="btn waves-effect waves-light" type="submit" name="action" ng-click="auth.signIn()">Log-in</button>
 		</div>
 		
 		<p ng-if="auth.error">

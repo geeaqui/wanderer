@@ -2,7 +2,7 @@ angular
 	.module('wanderers')
 	.controller('authenticationController', authenticationController)
 
-function authenticationController(Auth, User, $state){
+function authenticationController(Auth, $state, User){
 	var self = this;
 
 	self.signIn = function(){
