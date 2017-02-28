@@ -26,6 +26,15 @@ function authenticationController(Auth, $state){
 		});
 	}
 
+	self.signOut = function(){
+		Auth.$signOut();
+		$state.go('home');
+	}
+
+	Auth.$onAuthStateChanged(function(user){
+		console.log(user);
+		self.user = user;
+	})
 
 	function resetCredentials(){
 		self.email = "";
