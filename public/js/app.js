@@ -11,15 +11,23 @@ function AuthCatcher($rootScope, $state){
   })
 }
 
+var authRequired = {
+  currentAuth: function(Auth){
+    return Auth.$requireSignIn()
+  }
+}
+
 function MainRouter($stateProvider, $urlRouterProvider){
 	$stateProvider
 		.state('home',{
 			url:'/',
-			templateUrl:'/states/home.html'
+			templateUrl:'/states/home.html',
+			resolve: authRequired
 		})
 		.state('bucket',{
 			url:'/wanderers',
-			templateUrl:'/states/bucket.html'
+			templateUrl:'/states/bucket.html',
+			resolve: authRequired
 		})
 		.state('login',{
 			url:'/login',
@@ -34,5 +42,5 @@ function MainRouter($stateProvider, $urlRouterProvider){
 			templateUrl:'/states/authRequired.html'
 		})
 
-	$urlRouterProvider.otherwise('/');
+	// $urlRouterProvider.otherwise('/');
 }
