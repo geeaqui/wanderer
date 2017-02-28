@@ -1,17 +1,19 @@
-<section ng-if="!auth.user">
-	<div>
-		Email: <input type="text" ng-model="auth.email">
+<section ng-if="!auth.user" class="container">
+	<div class="row">
+		<div class="col m6 offset-m3">
+			Email: <input type="text" ng-model="auth.email">
+		</div>
+
+		<div class="col m6 offset-m3">
+			Password: <input type="password" ng-model="auth.password">
+		</div>
+		<div class="col m6 offset-m6">
+		<button ng-click="auth.createUser()">Create User</button>
+		</div>
+		<p ng-if="auth.error">
+			Error: {{auth.error}}
+		</p>
 	</div>
-
-	<div>
-		Password: <input type="password" ng-model="auth.password">
-	</div>
-
-	<button ng-click="auth.createUser()">Create User</button>
-
-	<p ng-if="auth.error">
-		Error: {{auth.error}}
-	</p>
 </section>
 
 <section ng-if="auth.user">

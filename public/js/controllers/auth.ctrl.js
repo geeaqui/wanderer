@@ -28,7 +28,7 @@ function authenticationController(Auth, $state){
 
 	self.signOut = function(){
 		Auth.$signOut();
-		$state.go('home');
+		$state.go('login');
 	}
 
 	Auth.$onAuthStateChanged(function(user){

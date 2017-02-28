@@ -1,6 +1,14 @@
 angular
 	.module('wanderers',['ui.router','firebase','ngResource'])
 	.config(MainRouter)
+	.run(AuthCatcher)
+
+
+function AuthCatcher($rootScope, $state){
+  $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error){
+    if(error === 'AUTH_REQUIRED') $state.go('authrequired')
+  })
+}
 
 function MainRouter($stateProvider, $urlRouterProvider){
 	$stateProvider
