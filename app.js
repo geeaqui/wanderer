@@ -3,9 +3,16 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var routes = require('./config/routes');
+var bodyParser = require('body-parser');
 
 // connect to the database
 mongoose.connect(process.env.MONGOLAB_URI ||'mongodb://localhost/destinations');
+
+// body parser for form data
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// body parser for json data
+app.use(bodyParser.json());
 
 //create a public folder to import local files
 app.use(express.static(__dirname + '/public'));

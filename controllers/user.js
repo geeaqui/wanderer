@@ -8,20 +8,34 @@ function indexDestination(req, res){
     res.status(200).json(destinations);
   });
 }
+function createUser (req, res) {
+	console.log(req.body)
+	User.create(req.body, function (err, user) {
+		if (err) {
+			console.log(err)
+			return res.status(500).json(err)
+		}
+		res.json(user)
+	})
+}
+
+
+
 
 function showDestination(req, res){
 }
 
 function updateDestination(req, res){
-	res.redirect('/');
+	// res.redirect('/');
 }
 
 function deleteDestination(req, res){
-	res.redirect('/');
+	// res.redirect('/');
 }
 
 
 module.exports = {
+	create: createUser,
 	index : indexDestination,
 	show : showDestination,
 	update : updateDestination,

@@ -2,7 +2,7 @@ angular
 	.module('wanderers')
 	.controller('authenticationController', authenticationController)
 
-function authenticationController(Auth, $state){
+function authenticationController(Auth, User, $state){
 	var self = this;
 
 	self.signIn = function(){
@@ -18,6 +18,14 @@ function authenticationController(Auth, $state){
 	self.createUser = function(){
 		Auth.$createUserWithEmailAndPassword(self.email, self.password)
 		.then(function(user){
+			User.create({
+                uid: user.uid,
+                first_name: self.firstName,
+                last_name: self.lastName
+            }, function(user, err) {
+                self.err = err.err;
+                resetCredentials();
+            })
 			resetCredentials();
 			console.log(user);
 		})

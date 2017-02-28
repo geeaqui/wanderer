@@ -9,12 +9,8 @@ var UserSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	email:{
+	uid:{
 		type:String,
-		required:true
-	},
-	password:{
-		type: String,
 		required:true
 	},
 	destinations:{
@@ -24,3 +20,9 @@ var UserSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('User' , UserSchema);
+
+
+
+// User.findOne({ uid: rec.body.uid }, function  (argument) {
+// 	// body...
+// })

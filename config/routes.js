@@ -6,6 +6,9 @@ var destinationController = require('../controllers/destinations');
 router.route('/destination')
 	.get(destinationController.index);
 
+router.route('/users')
+	.post(userController.create)
+
 // router.route('/user/:id')
 // 	.get(userController.show)
 // 	.put(userController.update)
