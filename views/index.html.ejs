@@ -13,12 +13,15 @@
 	<script type="text/javascript" src="js/controllers/auth.ctrl.js"></script>
 	<script type="text/javascript" src="js/controllers/controller.js"></script>
 
+	 <!-- Compiled and minified JavaScript -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
 	<!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
 
-  <!-- Compiled and minified JavaScript -->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
           
 	<title>Wanderer</title>
 </head>
@@ -37,9 +40,9 @@
 		    </div>
 
 		    <div ng-if="!auth.user" class="container">
-			    <div class="row">
-			      <a class="col m3 offset-m4 navigation" href="#" ui-sref="login">Log-in</a>
-			      <a class="col m3 navigation" href="#" ui-sref="signup">Register</a>
+			    <div class="row session">
+			      <a class="col s4 offset-s2 m3 offset-m3 btn waves-effect waves-light navigation" href="#" ui-sref="login">Log-in</a>
+			      <a class="col s4 m3 btn waves-effect waves-light navigation" href="#" ui-sref="signup">Register</a>
 			    </div>
 		    </div>
 		</section>
