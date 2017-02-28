@@ -12,6 +12,18 @@ function MainRouter($stateProvider, $urlRouterProvider){
 			url:'/wanderers',
 			templateUrl:'/states/bucket.html'
 		})
+		.state('login',{
+			url:'/login',
+			templateUrl:'/states/login.html'
+		})
+		.state('signup',{
+			url:'/signup',
+			templateUrl:'/states/signup.html'
+		})
+		.state('authrequired',{
+			url:'/authrequired',
+			templateUrl:'/states/authRequired.html'
+		})
 
 	$urlRouterProvider.otherwise('/');
 }
