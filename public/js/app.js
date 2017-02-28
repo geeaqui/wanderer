@@ -1,5 +1,5 @@
 angular
-	.module('wanderers',['ui.router'])
+	.module('wanderers',['ui.router','firebase','ngResource'])
 	.config(MainRouter)
 
 function MainRouter($stateProvider, $urlRouterProvider){
