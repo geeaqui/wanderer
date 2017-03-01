@@ -1,10 +1,11 @@
 angular
-	.module('wanderes')
-	.factory('Trip', tripFactory)
+	.module('wanderers')
+	.factory('Trips', tripFactory)
 
 function tripFactory(API, $http){
 	return {
-    getAll: function () {
-      return $http.get(API + '/trips')
-    }
+    	getAll: function () {
+      	return $http.get(API +'/destination')
+    	}
+	}
 }
