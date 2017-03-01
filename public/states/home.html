@@ -1,6 +1,6 @@
 <h1>Explore</h1>
 
-<div class="nav-wrapper container" ng-controller="tripController as trips">
+<div class="nav-wrapper container">
   <form class="row" ng-submit="trips.getTrips()">
     <div class="input-field col s8 offset-s2">
       <input id="search" type="search" placeholder="Explore Destination"  ng-model="trips.searchTerm" required>
@@ -8,5 +8,14 @@
       <i class="material-icons">close</i>
     </div>
   </form>
+
+  <div>
+  	<h3>{{trips.quotesFound}}</h3>
+  	<ul>
+  		<li ng-repeat="quote in trips.quotes">
+  		{{quote.MinPrice}} 
+  		<p>{{quote.QuoteDateTime}}</p></li>
+  	</ul>
+  </div>
 
 </div>
