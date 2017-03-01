@@ -35,35 +35,35 @@ app.get('/', function(req, res){
  */
 // options for GET
 
-var apiKey = "prtl6749387986743898559646983194";
-var country ="GB";
-var currency = "GBP";
-var destination = "AE";
-var optionsget = {
-    host : 'partners.api.skyscanner.net', // here only the domain name
-    // (no http/https !)
-    path : '/apiservices/browsequotes/v1.0/'+country+'/'+currency+'/en-US/uk/'+destination+'/anytime/anytime?apikey='+ apiKey, // the rest of the url with parameters if needed
-    method : 'GET' // do GET
-};
+// var apiKey = "prtl6749387986743898559646983194";
+// var country ="GB";
+// var currency = "GBP";
+// var destination = "AE";
+// var optionsget = {
+//     host : 'partners.api.skyscanner.net', // here only the domain name
+//     // (no http/https !)
+//     path : '/apiservices/browsequotes/v1.0/'+country+'/'+currency+'/en-US/uk/'+destination+'/anytime/anytime?apikey='+ apiKey, // the rest of the url with parameters if needed
+//     method : 'GET' // do GET
+// };
 
-// do the GET request
-var reqGet = http.request(optionsget, function(res) {
-    console.log("statusCode: ", res.statusCode);
-    // uncomment it for header details
-//  console.log("headers: ", res.headers);
+// // do the GET request
+// var reqGet = http.request(optionsget, function(res) {
+//     console.log("statusCode: ", res.statusCode);
+//     // uncomment it for header details
+// //  console.log("headers: ", res.headers);
  
-    res.on('data', function(d) {
-        console.info('GET result:\n');
-        process.stdout.write(d);
-        console.info('\n\nCall completed');
-    });
+//     res.on('data', function(d) {
+//         console.info('GET result:\n');
+//         process.stdout.write(d);
+//         console.info('\n\nCall completed');
+//     });
  
-});
+// });
 
-reqGet.end();
-reqGet.on('error', function(e) {
-    console.error(e);
-});
+// reqGet.end();
+// reqGet.on('error', function(e) {
+//     console.error(e);
+// });
 
 
 

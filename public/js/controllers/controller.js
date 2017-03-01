@@ -9,7 +9,7 @@ function tripController(Trips, $stateParams, $state){
 	self.getTrips = function(){
 		Trips.getAll()
 			.then(function(response){
-				console.log(response)
+				console.log(response.data)
 			})
 	}
 }

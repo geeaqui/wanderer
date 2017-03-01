@@ -1,9 +1,9 @@
 <h1>Explore</h1>
 
-<div class="nav-wrapper container">
-  <form class="row">
-    <div class="input-field col s8 offset-s2" ng-controller="tripController as trips">
-      <input ng-click="trips.getTrips()" id="search" type="search" placeholder="Explore Destination" required>
+<div class="nav-wrapper container" ng-controller="tripController as trips">
+  <form class="row" ng-submit="trips.getTrips()">
+    <div class="input-field col s8 offset-s2">
+      <input id="search" type="search" placeholder="Explore Destination" required>
       <label class="label-icon" for="search"><i class="material-icons"></i></label>
       <i class="material-icons">close</i>
     </div>

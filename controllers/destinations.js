@@ -1,17 +1,8 @@
-// var Destination = require('../models/destination');
 
-// function indexDestination(req, res){
-// 	Destination.find({} , function(err, destinations) {
-//     if(err) res.status(500).json({error: err.message});
-//     // data return so now we can render
-//     res.status(200).json(destinations);
-//   });
-// }
 
-var request = require('request');
-
-function indexDestination(){
+function indexDestination(req, res){
 	var apiKey = "prtl6749387986743898559646983194";
+	var request = require('request');
 	var country ="GB";
 	var currency = "GBP";
 	var destination = "AE";
@@ -25,9 +16,14 @@ function indexDestination(){
 	    }
 	};
 
-	request(options, function(err, res, body) {  
-	    let json = JSON.parse(body);
-	    console.log(json);
+	request(options, function(err, response, body) {  
+		if (err) {
+			conosle.log(err)
+			return res.status(500).json(err)
+		}
+
+	    var json = JSON.parse(body);
+	    res.json(json)
 	});
 }
 
