@@ -10,11 +10,11 @@
   </form>
 
   <div>
-  	<h3>{{trips.quotesFound}}</h3>
+  	<h3 ng-show="{{trips.quotes}}">Thank you for waiting, we have found {{trips.quotesFound}} results with your exploration</h3>
   	<ul>
   		<li ng-repeat="quote in trips.quotes">
   		{{quote.MinPrice}} 
-  		<p>{{quote.QuoteDateTime}}</p></li>
+  		<p>{{quote.InboundLeg.DepartureDate}}</p></li>
   	</ul>
   </div>
 

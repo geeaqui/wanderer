@@ -6,6 +6,7 @@ function tripController(Trips, $stateParams, $state){
 	var self = this;
 	self.tripQuery = [];
 	self.quotes = [];
+	self.carrier = [];
 
 	self.getTrips = function(){
 		Trips.getAll(self.searchTerm)
@@ -14,8 +15,13 @@ function tripController(Trips, $stateParams, $state){
 				self.tripQuery = response.data;
 				console.log(self.tripQuery);
 				self.quotes = self.tripQuery.Quotes;
-				console.log(self.quotes[0].MinPrice);
 				self.quotesFound = self.quotes.length;
+				for(var i=0;i<self.quotes.length; i++){
+					self.carrier.push(self.quotes[i].InboundLeg);
+				}
+				console.log(self.quotes);
+				console.log(self.carrier[0].CarrierIds);
+
 			})
 	}
-}
+} 
