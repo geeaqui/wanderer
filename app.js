@@ -34,10 +34,15 @@ app.get('/', function(req, res){
  * HOW TO Make an HTTP Call - GET
  */
 // options for GET
+
+var apiKey = "prtl6749387986743898559646983194";
+var country ="GB";
+var currency = "GBP";
+var destination = "AE";
 var optionsget = {
     host : 'partners.api.skyscanner.net', // here only the domain name
     // (no http/https !)
-    path : '/apiservices/browsequotes/v1.0/FR/eur/en-US/uk/us/anytime/anytime?apikey=prtl6749387986743898559646983194', // the rest of the url with parameters if needed
+    path : '/apiservices/browsequotes/v1.0/'+country+'/'+currency+'/en-US/uk/'+destination+'/anytime/anytime?apikey='+ apiKey, // the rest of the url with parameters if needed
     method : 'GET' // do GET
 };
 
@@ -56,19 +61,9 @@ var reqGet = http.request(optionsget, function(res) {
 });
 
 reqGet.end();
-// reqGet.on('error', function(e) {
-//     console.error(e);
-// });
-
-
-
-
-
-console.info(optionsget);
-var rq ="http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/FR/eur/en-US/uk/us/anytime/anytime?apikey=prtl6749387986743898559646983194"
-
-
-
+reqGet.on('error', function(e) {
+    console.error(e);
+});
 
 
 
