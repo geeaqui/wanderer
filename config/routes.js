@@ -3,7 +3,7 @@ var router = express.Router();
 var userController = require('../controllers/user');
 var destinationController = require('../controllers/destinations');
 
-router.route('/destination')
+router.route('/destination/:searchTerm')
 	.get(destinationController.index);
 
 router.route('/users')

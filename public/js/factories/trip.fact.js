@@ -4,8 +4,8 @@ angular
 
 function tripFactory(API, $http){
 	return {
-    	getAll: function () {
-      	return $http.get(API +'/destination')
+    	getAll: function (searchTerm) {
+      		return $http.get(API +'/destination/' + searchTerm )
     	}
 	}
 }

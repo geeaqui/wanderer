@@ -7,7 +7,7 @@ function tripController(Trips, $stateParams, $state){
 	self.all = [];
 
 	self.getTrips = function(){
-		Trips.getAll()
+		Trips.getAll(self.searchTerm)
 			.then(function(response){
 				console.log(response.data)
 			})
