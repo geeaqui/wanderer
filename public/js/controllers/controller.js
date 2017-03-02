@@ -11,10 +11,12 @@ function tripController(Trips, $stateParams, $state){
 	//Objects
 	self.quotes = [];
 	self.places = [];
-	
-	//
 	self.carrier = [];
+	self.flightDetail ={};
+
+	/************ Inbound Arrays ***********/
 	self.inboundOrigin=[];
+	self.inboundDepartureDate=[]
 
 	self.getTrips = function(){
 		Trips.getAll(self.searchTerm)
@@ -36,14 +38,16 @@ function tripController(Trips, $stateParams, $state){
 					for(var j= 0; j < self.places.length; j++){
 						//Inbound Origin data
 						if(self.quotes[i].InboundLeg.OriginId == self.places[j].PlaceId){
-							self.inboundOrigin.push(self.places[j].Name);
-							//self.flightDetails.inboundOrigin = self.places[j].Name
+							//push origin destination into the array
+							self.flightDetail.origin = self.places[j].Name
+							self.inboundOrigin.push(self.flightDetail);
+							//self.flightDetail[self.inboundOrigin.push(self.places[j].Name)];
 							console.log('Inbound Origin: ' + self.inboundOrigin);
 
 						}
 						if(self.quotes[i].InboundLeg.DestinationId == self.places[j].PlaceId){
 							//Departure Date inbound data
-							self.inboundDepartureDate = self.quotes[i].InboundLeg.DepartureDate;
+							self.inboundDepartureDate.push({Departuredate:self.quotes[i].InboundLeg.DepartureDate});
 							console.log("Inbound Departure Date: " + self.quotes[i].InboundLeg.DepartureDate);
 							for(var k=0; k< self.carriers.length; k++){
 
@@ -55,7 +59,9 @@ function tripController(Trips, $stateParams, $state){
 
 							//Price inbound flight data
 							console.log("Inbound Price: " + self.quotes[i].MinPrice);
-							self.inboundDestination = self.places[j].Name;
+							//self.inboundDestination = self.places[j].Name;
+							self.flightDetail.destination = self.places[j].Name;
+							self.inboundOrigin.push(self.flightDetail);
 
 							//Destination inbound flight data
 							console.log("Inbound Destination: " + self.inboundDestination);
@@ -89,6 +95,8 @@ function tripController(Trips, $stateParams, $state){
 					}
 				}
 				console.log(self.inboundOrigin);
+				console.log(self.inboundDepartureDate);
+				
 			})
 	}
 
