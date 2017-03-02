@@ -37,15 +37,19 @@ function tripController(Trips, $stateParams, $state){
 				for(var i = 0; i<self.quotes.length;i++){
 					for(var j= 0; j < self.places.length; j++){
 						if(self.quotes[i].InboundLeg.DestinationId == self.places[j].PlaceId){
+							//inbound data
 							console.log("Inbound Departure Date: " + self.quotes[i].InboundLeg.DepartureDate);
 							for(var k=0; k< self.carriers.length; k++){
 
 								if(self.quotes[i].InboundLeg.CarrierIds[0] == self.carriers[k].CarrierId){
+									//Inbound data
 									console.log("Inbound Airline: " + self.carriers[k].Name);
 								}
 							}
+							//inbound flight data
 							console.log("Inbound Price: " + self.quotes[i].MinPrice);
 							self.destinationName = self.places[j].Name;
+							//inbound flight data
 							console.log("Inbound Destination: " + self.destinationName);
 						}else{
 							console.log("this does not match");
