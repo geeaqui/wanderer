@@ -13,8 +13,8 @@
   	<h3 ng-show="{{trips.quotes}}">Thank you for waiting, we have found {{trips.quotesFound}} results with your exploration</h3>
   	<ul>
   		<li ng-repeat="quote in trips.quotes">
-  		{{quote.MinPrice}} 
-  		<p>{{quote.InboundLeg.DepartureDate}}</p></li>
+  			<p>{{trips.inboundOrigin}}</p>
+  		</li>
   	</ul>
   </div>
 
