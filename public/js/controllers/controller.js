@@ -103,7 +103,7 @@ function tripController(Trips, $stateParams, $state){
 
 					}
 				}
-				console.log(self.inboundOrigin);
+	
 				console.log(self.flightQuery);
 				
 			})

@@ -10,7 +10,7 @@
   </form>
 
   <div id="userQuery" class="row">
-  	<h3 ng-show="{{trips.quotes}}">Thank you for waiting, we have found {{trips.quotesFound}} results with your exploration</h3>
+  	<h6 ng-show="{{trips.quotes}}">Thank you for waiting, we have found {{trips.quotesFound}} results with your exploration</h6>
   	<ul>
   		<li ng-repeat="flight in trips.flightQuery">
   			<div class="col m6">
@@ -27,7 +27,9 @@
 	  			<p>Carrier: {{flight.outboundCarrier}}</p>
 	  			<p>Departure Date: {{flight.outboundDepartureDate}}</p>
   			</div>
-  			<p class="price">Price: {{flight.Price | currency : '£'}}</p>
+  			<div class="col s12 flightPrice">
+  				<p>Price: {{flight.Price | currency : '£'}}</p>
+  			</div>
   		</li>
   	</ul>
   </div>

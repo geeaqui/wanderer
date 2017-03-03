@@ -3,6 +3,15 @@
 	border:0;
 }
 
-#userQuery ul li {
+/*#userQuery ul li {
 	border-bottom: 1px solid #333;
+}*/
+
+.flightPrice{
+	background-color: #26a69a;
+}
+
+.flightPrice p{
+	float:right;
+	color:#fff;
 }
