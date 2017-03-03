@@ -22,13 +22,12 @@ function tripController(Trips, $stateParams, $state){
 	self.getTrips = function(){
 		Trips.getAll(self.searchTerm)
 			.then(function(response){
-				//console.log(response.data)
+				console.log(response)
 				self.tripQuery = response.data;
 				console.log(self.tripQuery);
 				self.quotes = self.tripQuery.Quotes;
 				self.places = self.tripQuery.Places;
 				self.carriers = self.tripQuery.Carriers;
-				console.log(self.places);
 
 				//return the number of queries.
 				self.quotesFound = self.quotes.length;
@@ -41,8 +40,9 @@ function tripController(Trips, $stateParams, $state){
 						if(self.quotes[i].InboundLeg.OriginId == self.places[j].PlaceId){
 							//push origin destination into the array
 							console.log("Destination " + self.places[j].Name)
+
 							self.flightDetail= {inboundOrigin: self.places[j].Name};
-							console.log("asdFLights:::: " + self.flightDetail.origin)
+					
 							self.flightQuery.push(self.flightDetail);
 
 						}
@@ -85,16 +85,18 @@ function tripController(Trips, $stateParams, $state){
 						}
 						//Outbound flight data
 						if(self.quotes[i].OutboundLeg.DestinationId == self.places[j].PlaceId){
+
 							//Outbound Deaparture Date
 							console.log("Outbound Departure Date: " + self.quotes[i].OutboundLeg.DepartureDate);
 							self.flightDetail.outboundDepartureDate = self.quotes[i].OutboundLeg.DepartureDate;
 							self.outBoundDestination = self.places[j].Name;
 							self.flightDetail.outboundDestination = self.places[j].Name
+
 							//Outbound Flight Destination
 							console.log("OutBound Destination: " + self.outBoundDestination);
 							for(var k=0; k< self.carriers.length; k++){
 								if(self.quotes[i].OutboundLeg.CarrierIds[0] == self.carriers[k].CarrierId){
-									
+
 									// Outbound Carrier/airline data
 									console.log("Outbound Airline: " + self.carriers[k].Name);
 									self.flightDetail.outboundCarrier = self.carriers[k].Name;
@@ -103,14 +105,16 @@ function tripController(Trips, $stateParams, $state){
 						}
 
 					}
-				}
-	
-				console.log(self.flightQuery);
-				
+				}				
 			})
 	}
+	self.addToList = function (flight) {
+		console.log(flight)
+	} 
 
-	
+	function getList(){
+		console.log("button pressed");
+	}
 } 
 
 
