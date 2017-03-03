@@ -1,4 +1,6 @@
 
+var Flights = require('../models/flights');
+var User = require('../models/user');
 
 function indexDestination(req, res){
 	console.log(req.params)
@@ -29,6 +31,27 @@ function indexDestination(req, res){
 	});
 }
 
+function addFlights(req, res){
+	var uid = req.params.id
+	User.findOne({uid: uid}, function (err, user) {
+
+		var flights = new Flights(req.body);
+	  	flights.save(function(error) {
+	    	if(error) res.json({messsage: 'Could not add flights b/c:' + error});
+
+	    	user.destinations.push(flights._id)
+	    	user.save(function (err) {
+	    		if(err) res.json({messsage: 'Could not add flights b/c:' + err});
+	    		res.json({flights: flights});
+	    	})
+
+	  	});
+
+	})
+
+}
+
 module.exports = {
-	index : indexDestination
+	index : indexDestination,
+	add : addFlights
 }

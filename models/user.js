@@ -15,14 +15,10 @@ var UserSchema = new mongoose.Schema({
 	},
 	destinations:{
 		type: [mongoose.Schema.Types.ObjectId], 
-		ref: "Destination"
+		ref: "Flights"
 	}
 });
 
 module.exports = mongoose.model('User' , UserSchema);
 
 
-
-// User.findOne({ uid: rec.body.uid }, function  (argument) {
-// 	// body...
-// })
