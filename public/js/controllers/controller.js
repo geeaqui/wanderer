@@ -69,8 +69,7 @@ function tripController(Trips, $stateParams, $state){
 							//Destination inbound flight data
 							console.log("Inbound Destination: " + self.inboundDestination);
 
-							//push objects data into the array
-							// self.inboundOrigin.push(self.flightDetail);
+							
 						}else{
 							console.log("this does not match");
 						}
@@ -80,6 +79,7 @@ function tripController(Trips, $stateParams, $state){
 						//Outbound Origin Data
 						if(self.quotes[i].OutboundLeg.OriginId == self.places[j].PlaceId){
 							self.outboundOrigin = self.places[j].Name;
+							self.flightDetail.outboundOrigin = self.places[j].Name
 							console.log('outbound Origin: ' + self.outboundOrigin);
 						}
 						//Outbound flight data
@@ -87,12 +87,14 @@ function tripController(Trips, $stateParams, $state){
 							//Outbound Deaparture Date
 							console.log("Outbound Departure Date: " + self.quotes[i].OutboundLeg.DepartureDate);
 							self.outBoundDestination = self.places[j].Name;
+							self.flightDetail.outboundDestination = self.places[j].Name
 							//Outbound Flight Destination
 							console.log("OutBound Destination: " + self.outBoundDestination);
 							for(var k=0; k< self.carriers.length; k++){
 								if(self.quotes[i].OutboundLeg.CarrierIds[0] == self.carriers[k].CarrierId){
 									// Outbound Carrier/airline data
 									console.log("Outbound Airline: " + self.carriers[k].Name);
+									self.flightDetail.outboundCarrier = self.carriers[k].Name;
 								}
 							}
 						}
