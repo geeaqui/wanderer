@@ -63,9 +63,9 @@ function tripController(Trips, $stateParams, $state){
 							//Price inbound flight data
 							console.log("Inbound Price: " + self.quotes[i].MinPrice);
 							self.flightDetail.Price = self.quotes[i].MinPrice;
-							//self.inboundDestination = self.places[j].Name;
+							
 							self.flightDetail.inboundDestination = self.places[j].Name;
-							//self.inboundOrigin.push(self.flightDetail);
+							
 
 							//Destination inbound flight data
 							console.log("Inbound Destination: " + self.inboundDestination);
@@ -94,6 +94,7 @@ function tripController(Trips, $stateParams, $state){
 							console.log("OutBound Destination: " + self.outBoundDestination);
 							for(var k=0; k< self.carriers.length; k++){
 								if(self.quotes[i].OutboundLeg.CarrierIds[0] == self.carriers[k].CarrierId){
+									
 									// Outbound Carrier/airline data
 									console.log("Outbound Airline: " + self.carriers[k].Name);
 									self.flightDetail.outboundCarrier = self.carriers[k].Name;

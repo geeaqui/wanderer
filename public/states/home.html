@@ -1,5 +1,13 @@
 <h1>Explore</h1>
 
+<!-- Video Background -->
+<!-- <div class="fullscreen-bg">
+    <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+        <source src="/images/Heaven-From-Top/WEBM/Heaven-From-Top.webm" type="video/webm">
+        <source src="/images/Heaven-From-Top/MP4/Heaven-From-Top.mp4" type="video/mp4">
+    </video>
+</div> -->
+
 <div class="nav-wrapper container">
   <form class="row" ng-submit="trips.getTrips()">
     <div class="input-field col s8 offset-s2">
@@ -10,7 +18,7 @@
   </form>
 
   <div id="userQuery" class="row">
-  	<h6 ng-show="{{trips.quotes}}">Thank you for waiting, we have found {{trips.quotesFound}} results with your exploration</h6>
+  	<h6 ng-if="trips.quotesFound">Thank you for waiting, we have found {{trips.quotesFound}} results with your exploration</h6>
   	<ul>
   		<li ng-repeat="flight in trips.flightQuery">
   			<div class="col m6">
@@ -31,6 +39,7 @@
           <img class="airlineLogo" src="/images/british-air.jpg"/>
         </div>
   			<div class="col s12 flightPrice">
+          <button class="col m2 offset-m8 btn waves-effect waves-light">Add to List</button>
   				<p>Price: {{flight.Price | currency : '£'}}</p>
   			</div>
   		</li>
