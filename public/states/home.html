@@ -12,8 +12,10 @@
   <div>
   	<h3 ng-show="{{trips.quotes}}">Thank you for waiting, we have found {{trips.quotesFound}} results with your exploration</h3>
   	<ul>
-  		<li ng-repeat="quote in trips.quotes">
-  			<p>{{trips.inboundOrigin}}</p>
+  		<li ng-repeat="flight in trips.inboundOrigin">
+  			<p>Origin: {{flight.Origin}}</p>
+  			<p>Destination: {{flight.destination}}</p>
+  			<p>Price: {{flight.Price}}</p>
   		</li>
   	</ul>
   </div>

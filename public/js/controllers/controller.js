@@ -12,7 +12,7 @@ function tripController(Trips, $stateParams, $state){
 	self.quotes = [];
 	self.places = [];
 	self.carrier = [];
-	self.flightDetail ={};
+	self.flightDetail;
 
 	/************ Inbound Arrays ***********/
 	self.inboundOrigin=[];
@@ -39,33 +39,37 @@ function tripController(Trips, $stateParams, $state){
 						//Inbound Origin data
 						if(self.quotes[i].InboundLeg.OriginId == self.places[j].PlaceId){
 							//push origin destination into the array
-							self.flightDetail.origin = self.places[j].Name
+							console.log("Destination " + self.places[j].Name)
+							self.flightDetail= {Origin: self.places[j].Name};
+							console.log("asdFLights:::: " + self.flightDetail.origin)
 							self.inboundOrigin.push(self.flightDetail);
-							//self.flightDetail[self.inboundOrigin.push(self.places[j].Name)];
-							console.log('Inbound Origin: ' + self.inboundOrigin);
 
 						}
 						if(self.quotes[i].InboundLeg.DestinationId == self.places[j].PlaceId){
 							//Departure Date inbound data
-							self.inboundDepartureDate.push({Departuredate:self.quotes[i].InboundLeg.DepartureDate});
+							
 							console.log("Inbound Departure Date: " + self.quotes[i].InboundLeg.DepartureDate);
 							for(var k=0; k< self.carriers.length; k++){
 
 								if(self.quotes[i].InboundLeg.CarrierIds[0] == self.carriers[k].CarrierId){
 									//Inbound Carrier/airline data
 									console.log("Inbound Airline: " + self.carriers[k].Name);
+
 								}
 							}
 
 							//Price inbound flight data
 							console.log("Inbound Price: " + self.quotes[i].MinPrice);
+							self.flightDetail.Price = self.quotes[i].MinPrice;
 							//self.inboundDestination = self.places[j].Name;
 							self.flightDetail.destination = self.places[j].Name;
-							self.inboundOrigin.push(self.flightDetail);
+							//self.inboundOrigin.push(self.flightDetail);
 
 							//Destination inbound flight data
 							console.log("Inbound Destination: " + self.inboundDestination);
 
+							//push objects data into the array
+							// self.inboundOrigin.push(self.flightDetail);
 						}else{
 							console.log("this does not match");
 						}
@@ -95,7 +99,6 @@ function tripController(Trips, $stateParams, $state){
 					}
 				}
 				console.log(self.inboundOrigin);
-				console.log(self.inboundDepartureDate);
 				
 			})
 	}
