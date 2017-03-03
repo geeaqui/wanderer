@@ -9,21 +9,25 @@
     </div>
   </form>
 
-  <div id="userQuery">
+  <div id="userQuery" class="row">
   	<h3 ng-show="{{trips.quotes}}">Thank you for waiting, we have found {{trips.quotesFound}} results with your exploration</h3>
   	<ul>
   		<li ng-repeat="flight in trips.flightQuery">
-  			<h5>Inbound:</h5>
-  			<p>Origin: {{flight.inboundOrigin}}</p>
-  			<p>Destination: {{flight.inboundDestination}}</p>
-  			<p>Carrier: {{flight.inboundCarrier}}</p>
-  			<p>Departure Date: {{flight.inboundDepartureDate }}</p>
-  			<h5>Outbound:</h5>
-  			<p>Origin: {{flight.outboundOrigin}}</p>
-  			<p>Destination: {{flight.outboundDestination}}</p>
-  			<p>Carrier: {{flight.outboundCarrier}}</p>
-  			<p>Departure Date: {{flight.outboundDepartureDate}}</p>
-  			<p>Price: {{flight.Price}}</p>
+  			<div class="col m6">
+	  			<h5>Inbound:</h5>
+	  			<p>Origin: {{flight.inboundOrigin}}</p>
+	  			<p>Destination: {{flight.inboundDestination}}</p>
+	  			<p>Carrier: {{flight.inboundCarrier}}</p>
+	  			<p>Departure Date: {{flight.inboundDepartureDate }}</p>
+  			</div>
+  			<div class="col m6">
+	  			<h5>Outbound:</h5>
+	  			<p>Origin: {{flight.outboundOrigin}}</p>
+	  			<p>Destination: {{flight.outboundDestination}}</p>
+	  			<p>Carrier: {{flight.outboundCarrier}}</p>
+	  			<p>Departure Date: {{flight.outboundDepartureDate}}</p>
+  			</div>
+  			<p class="price">Price: {{flight.Price | currency : '£'}}</p>
   		</li>
   	</ul>
   </div>
