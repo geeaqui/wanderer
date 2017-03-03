@@ -2,3 +2,7 @@
 	border-radius: 0;
 	border:0;
 }
+
+#userQuery ul li {
+	border-bottom: 1px solid #333;
+}

@@ -16,7 +16,8 @@ function tripController(Trips, $stateParams, $state){
 
 	/************ Inbound Arrays ***********/
 	self.inboundOrigin=[];
-	self.inboundDepartureDate=[]
+	self.inboundDepartureDate=[];
+	self.flightQuery = [];
 
 	self.getTrips = function(){
 		Trips.getAll(self.searchTerm)
@@ -40,9 +41,9 @@ function tripController(Trips, $stateParams, $state){
 						if(self.quotes[i].InboundLeg.OriginId == self.places[j].PlaceId){
 							//push origin destination into the array
 							console.log("Destination " + self.places[j].Name)
-							self.flightDetail= {Origin: self.places[j].Name};
+							self.flightDetail= {inboundOrigin: self.places[j].Name};
 							console.log("asdFLights:::: " + self.flightDetail.origin)
-							self.inboundOrigin.push(self.flightDetail);
+							self.flightQuery.push(self.flightDetail);
 
 						}
 						if(self.quotes[i].InboundLeg.DestinationId == self.places[j].PlaceId){
@@ -54,7 +55,7 @@ function tripController(Trips, $stateParams, $state){
 								if(self.quotes[i].InboundLeg.CarrierIds[0] == self.carriers[k].CarrierId){
 									//Inbound Carrier/airline data
 									console.log("Inbound Airline: " + self.carriers[k].Name);
-
+									self.flightDetail.inboundCarrier = self.carriers[k].Name;
 								}
 							}
 
@@ -62,7 +63,7 @@ function tripController(Trips, $stateParams, $state){
 							console.log("Inbound Price: " + self.quotes[i].MinPrice);
 							self.flightDetail.Price = self.quotes[i].MinPrice;
 							//self.inboundDestination = self.places[j].Name;
-							self.flightDetail.destination = self.places[j].Name;
+							self.flightDetail.inboundDestination = self.places[j].Name;
 							//self.inboundOrigin.push(self.flightDetail);
 
 							//Destination inbound flight data
@@ -99,6 +100,7 @@ function tripController(Trips, $stateParams, $state){
 					}
 				}
 				console.log(self.inboundOrigin);
+				console.log(self.flightQuery);
 				
 			})
 	}

@@ -9,12 +9,14 @@
     </div>
   </form>
 
-  <div>
+  <div id="userQuery">
   	<h3 ng-show="{{trips.quotes}}">Thank you for waiting, we have found {{trips.quotesFound}} results with your exploration</h3>
   	<ul>
-  		<li ng-repeat="flight in trips.inboundOrigin">
-  			<p>Origin: {{flight.Origin}}</p>
-  			<p>Destination: {{flight.destination}}</p>
+  		<li ng-repeat="flight in trips.flightQuery">
+  			<h5>Inbound:</h5>
+  			<p>Origin: {{flight.inboundOrigin}}</p>
+  			<p>Destination: {{flight.inboundDestination}}</p>
+  			<p>Carrier: {{flight.inboundCarrier}}</p>
   			<p>Price: {{flight.Price}}</p>
   		</li>
   	</ul>
