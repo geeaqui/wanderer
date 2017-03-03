@@ -8,7 +8,7 @@ function tripController(Trips, $stateParams, $state){
 	//Objects Array
 	self.tripQuery = [];
 	
-	//Objects
+	//array of objects of the flight api data
 	self.quotes = [];
 	self.places = [];
 	self.carrier = [];
@@ -50,6 +50,7 @@ function tripController(Trips, $stateParams, $state){
 							//Departure Date inbound data
 							
 							console.log("Inbound Departure Date: " + self.quotes[i].InboundLeg.DepartureDate);
+							self.flightDetail.inboundDepartureDate = self.quotes[i].InboundLeg.DepartureDate;
 							for(var k=0; k< self.carriers.length; k++){
 
 								if(self.quotes[i].InboundLeg.CarrierIds[0] == self.carriers[k].CarrierId){
@@ -86,6 +87,7 @@ function tripController(Trips, $stateParams, $state){
 						if(self.quotes[i].OutboundLeg.DestinationId == self.places[j].PlaceId){
 							//Outbound Deaparture Date
 							console.log("Outbound Departure Date: " + self.quotes[i].OutboundLeg.DepartureDate);
+							self.flightDetail.outboundDepartureDate = self.quotes[i].OutboundLeg.DepartureDate;
 							self.outBoundDestination = self.places[j].Name;
 							self.flightDetail.outboundDestination = self.places[j].Name
 							//Outbound Flight Destination
