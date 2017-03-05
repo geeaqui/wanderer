@@ -111,7 +111,7 @@ function tripController(Trips, $stateParams, $state, Auth){
 	self.addToList = function (flight) {
 		console.log(flight)
 		var id = Auth.$getAuth().uid
-		Trips.add(flight, id)
+		Trips.add(flight,  )
 			.then(function(){
 				$state.go('home');
 			})

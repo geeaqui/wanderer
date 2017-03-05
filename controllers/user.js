@@ -1,8 +1,7 @@
 var Destination = require('../models/destination');
 var User = require('../models/user');
 
-function createUser (req, res) {
-	console.log(req.body)
+function createUser(req, res) {
 	User.create(req.body, function (err, user) {
 		if (err) {
 			console.log(err)
@@ -12,6 +11,15 @@ function createUser (req, res) {
 	})
 }
 
+function showUser(req, res){
+	User.findById(req.user._id).populate('destinations').exec(function(err, user){
+		if(err) return res.status(500).send(err);
+		console.log(user.destinations);
+		res.json(user);
+	});
+}
+
 module.exports = {
-	create: createUser
+	create: createUser,
+	show: showUser
 }

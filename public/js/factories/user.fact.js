@@ -6,6 +6,7 @@ function userFactory(API, $resource) {
 	
     return $resource(API + '/users/:id', { id: '@id' }, { 
         'create': { method: 'POST'},
+        // 'show': {method: 'GET'}
     })	
 }
 
