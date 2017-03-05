@@ -1,3 +1,7 @@
+body{
+	font-family: 'Open Sans', sans-serif 
+}
+
 .navigation{
 	border-radius: 0;
 	border:0;
@@ -25,6 +29,12 @@
 	width:300px;
 	height:100px;
 	float: right;
+}
+
+/************************HomePage********************/
+#wanderer-video{
+	position:relative;
+	top:-300px;
 }
 
 /**********************Navigation*******************/

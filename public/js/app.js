@@ -41,9 +41,9 @@ function MainRouter($stateProvider, $urlRouterProvider){
 			url:'/authrequired',
 			templateUrl:'/states/authRequired.html'
 		})
-		.state('flight',{
-			url:'/flight',
-			templateUrl:'/states/authRequired.html'
+		.state('wanderer',{
+			url:'/',
+			templateUrl:'/states/wanderer.html'
 		})
 
 	$urlRouterProvider.otherwise('/');
