@@ -11,20 +11,6 @@ body{
 	border-bottom: 1px solid #333;
 }*/
 
-.flightPrice{
-	background-color: #26a69a;
-}
-
-.flightPrice p{
-	float:right;
-	color:#fff;
-}
-
-.flightPrice button{
-	margin-top: 5px;
-	background-color: #30504d;
-}
-
 .airlineLogo{
 	width:300px;
 	height:100px;
@@ -91,10 +77,14 @@ span{
         color:#fff;
         transition: 1s;
 }
-/*#par-city{
-	height:200px;
-	width:300px;
-}*/
+
+#welcome-msg{
+	background-color:#5B696E;
+	position:relative;
+	top:-15px;
+	color:#fff;
+	font-family: 'Supermercado One', cursive;
+}
 /**********************Navigation*******************/
 #nav-bar{
 	background-color: #666666;
@@ -108,4 +98,34 @@ span{
 
 #wanderer-nav a{
 	color:#fff;
+}
+
+/*********************Explore*************************/
+#searchTrip{
+	border:5px solid #666666;
+	padding:50px;
+	border-radius: 10px;
+	margin-bottom: 200px;
+}
+
+#flightTrips{
+	border:5px solid #666666;
+	margin-bottom: 25px;
+	border-radius: 10px;
+}
+
+.flightPrice{
+	background-color: #26a69a;
+	border-radius: 10px 10px 0 0;
+}
+
+.flightPrice p{
+	float:right;
+	color:#fff;
+}
+
+.flightPrice button{
+	margin-top: 5px;
+	background-color: #30504d;
+	border-radius: 10px 10px 0 0;
 }

@@ -71,8 +71,7 @@
 
 	<section class="userWidget headerElement">
 	    <div ng-if="auth.user">
-	      <p>Welcome {{auth.user.email}}, remember to keep our secrets a secret</p>
-	      <a href="#" ng-click="auth.signOut()">Click Here</a> to sign out
+	      <p id="welcome-msg">Welcome {{auth.user.email}}, </p>
 	    </div>
 
 	<!--     <div ng-if="!auth.user" class="container">
