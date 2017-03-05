@@ -53,6 +53,19 @@ body{
 	}
 }
 
+#par-city{
+	    background:url('../images/city.jpg') no-repeat center center fixed; 
+        background-size:cover;
+        height:650px;
+        color:#fff;
+        transition: 1s;
+}
+
+
+/*#par-city{
+	height:200px;
+	width:300px;
+}*/
 /**********************Navigation*******************/
 #nav-bar{
 	background-color: #666666;
