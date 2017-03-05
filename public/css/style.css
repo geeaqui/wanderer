@@ -36,6 +36,7 @@ body{
 	position:relative;
 	text-align: center;
 	top:-200px;
+	margin-bottom: -200px;
 	color:#fff;
 	font-family: 'Supermercado One', cursive;
 
@@ -56,12 +57,27 @@ body{
 #par-city{
 	    background:url('../images/city.jpg') no-repeat center center fixed; 
         background-size:cover;
-        height:650px;
+        /*height:750px;*/
+        height:750px;
         color:#fff;
         transition: 1s;
 }
 
+#par-beach{
+	    background:url('../images/beach.jpg') no-repeat center center fixed; 
+        background-size:cover;
+        height:750px;
+        color:#fff;
+        transition: 1s;
+}
 
+#par-adventure{
+	    background:url('../images/adventure.jpg') no-repeat center center fixed; 
+        background-size:cover;
+        height:750px;
+        color:#fff;
+        transition: 1s;
+}
 /*#par-city{
 	height:200px;
 	width:300px;
