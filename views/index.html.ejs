@@ -47,39 +47,41 @@
 		     </ul>
 		</div>
 	</nav> -->
-		<nav id="nav-bar" class="nav-extended">
-			<div class="nav-wrapper">
-				<ul id="nav-mobile" class="col l12 right hide-on-med-and-down">
-					<li class="col s12 m1"><a href="#" ui-sref="wanderer">Wanderer</a></li>
-					<li class="col s12 m1"><a href="#" ui-sref="home">Explore</a></li>
-					<li class="col s12 m2"><a href="#" ui-sref="bucket">Bucket Lista</a></li>
-					<li class="col s12 m2 offset-m6"><a href="#" ui-sref="login">Log-in/Register</a></li>
-				</ul>
+	<nav id="nav-bar" class="nav-extended">
+		<div class="nav-wrapper">
+			<ul id="nav-mobile" class="col l12 right hide-on-med-and-down">
+				<li class="col s12 m1"><a href="#" ui-sref="wanderer">Wanderer</a></li>
+				<li class="col s12 m1"><a href="#" ui-sref="home">Explore</a></li>
+				<li class="col s12 m2"><a href="#" ui-sref="bucket">Bucket Lista</a></li>
+				<li ng-if="!auth.user" class="col s12 m2 offset-m6"><a href="#" ui-sref="login">Log-in/Register</a></li>
+				<li ng-if="auth.user" class="col s12 m2 offset-m6" ng-click="auth.signOut()"><a href="#">Sign-out</a></li>
+			</ul>
 
-				<ul id="slide-out" class="side-nav">
-				    <li id="wanderer-nav" class="col s12 m1"><a href="#" ui-sref="wanderer">Wanderer</a></li>
-				    <li><div class="divider"></div></li>
-				    <li class="col s12 m1"><a href="#" ui-sref="home">Explore</a></li>
-				    <li class="col s12 m2"><a href="#" ui-sref="bucket">Bucket Lista</a></li>
-				    <li class="col s12 m2 offset-m6"><a href="#" ui-sref="login">Log-in/Register</a></li>
-			  </ul>
-			  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-		  </div>
-	  	</nav>
+			<ul id="slide-out" class="side-nav">
+			    <li id="wanderer-nav" class="col s12 m1"><a href="#" ui-sref="wanderer">Wanderer</a></li>
+			    <li><div class="divider"></div></li>
+			    <li class="col s12 m1"><a href="#" ui-sref="home">Explore</a></li>
+			    <li class="col s12 m2"><a href="#" ui-sref="bucket">Bucket Lista</a></li>
+			    <li ng-if="!auth.user" class="col s12 m2 offset-m6"><a href="#" ui-sref="login">Log-in/Register</a></li>
+			    <li ng-if="auth.user" class="col s12 m2 offset-m6" ng-click="auth.signOut()"><a href="#">Sign-out</a></li>
+		  </ul>
+		  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+	  </div>
+  	</nav>
 
-		<section class="userWidget headerElement">
-		    <div ng-if="auth.user">
-		      <p>Welcome {{auth.user.email}}, remember to keep our secrets a secret</p>
-		      <a href="#" ng-click="auth.signOut()">Click Here</a> to sign out
+	<section class="userWidget headerElement">
+	    <div ng-if="auth.user">
+	      <p>Welcome {{auth.user.email}}, remember to keep our secrets a secret</p>
+	      <a href="#" ng-click="auth.signOut()">Click Here</a> to sign out
+	    </div>
+
+	<!--     <div ng-if="!auth.user" class="container">
+		    <div class="row session">
+		      <a class="col s4 offset-s2 m3 offset-m3 btn waves-effect waves-light navigation" href="#" ui-sref="login">Log-in</a>
+		      <a class="col s4 m3 btn waves-effect waves-light navigation" href="#" ui-sref="signup">Register</a>
 		    </div>
-
-		<!--     <div ng-if="!auth.user" class="container">
-			    <div class="row session">
-			      <a class="col s4 offset-s2 m3 offset-m3 btn waves-effect waves-light navigation" href="#" ui-sref="login">Log-in</a>
-			      <a class="col s4 m3 btn waves-effect waves-light navigation" href="#" ui-sref="signup">Register</a>
-			    </div>
-		    </div> -->
-		</section>
+	    </div> -->
+	</section>
 	<section ui-view ng-controller="tripController as trips">
 
 	<!-- ui-view Section -->

@@ -31,6 +31,14 @@ body{
 	float: right;
 }
 
+h2{
+	margin:0;
+	position: relative;
+	top:300px;
+	text-align: center;
+	font-family: 'Supermercado One', cursive;
+}
+
 /************************HomePage********************/
 #wanderer-video{
 	position:relative;
@@ -39,6 +47,7 @@ body{
 	margin-bottom: -200px;
 	color:#fff;
 	font-family: 'Supermercado One', cursive;
+	transition: 1s;
 
 }
 
@@ -61,6 +70,10 @@ body{
         height:750px;
         color:#fff;
         transition: 1s;
+}
+
+span{
+	text-align: center;
 }
 
 #par-beach{
