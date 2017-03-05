@@ -17,6 +17,7 @@
 	 <!-- Compiled and minified JavaScript -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
 
 	<!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
@@ -27,14 +28,45 @@
 	<title>Wanderer</title>
 </head>
 <body ng-controller="authenticationController as auth">
-	<nav id="nav-bar" class="row">
-		<ul class="col l12">
-			<li><a href="#" ui-sref="/">Wanderer</a></li>
-			<li><a href="#" ui-sref="home">Explore</a></li>
-			<li><a href="#" ui-sref="bucket">Bucket Lista</a></li>
-			<li><a href="#" ui-sref="login">Log-in/Register</a></li>
-		</ul>
-	</nav>
+<!-- 	<nav id="nav-bar" class="nav-extended">
+		<div class="nav-wrapper">
+			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			<ul id="nav-mobile" class="col l12 right hide-on-med-and-down">
+				<li class="col s12 m1"><a href="#" ui-sref="/">Wanderer</a></li>
+				<li class="col s12 m1"><a href="#" ui-sref="home">Explore</a></li>
+				<li class="col s12 m2"><a href="#" ui-sref="bucket">Bucket Lista</a></li>
+				<li class="col s12 m2 offset-m6"><a href="#" ui-sref="login">Log-in/Register</a></li>
+			</ul>
+
+			 <ul class="side-nav" id="mobile-demo">
+				<li class="col s12 m1"><a href="#" ui-sref="/">Wanderer</a></li>
+				<li class="col s12 m1"><a href="#" ui-sref="home">Explore</a></li>
+				<li class="col s12 m2"><a href="#" ui-sref="bucket">Bucket Lista</a></li>
+				<li class="col s12 m2 offset-m6"><a href="#" ui-sref="login">Log-in/Register</a></li>
+		     </ul>
+		</div>
+	</nav> -->
+		<nav id="nav-bar" class="nav-extended">
+			<div class="nav-wrapper">
+				<ul id="nav-mobile" class="col l12 right hide-on-med-and-down">
+				<li class="col s12 m1"><a href="#" ui-sref="/">Wanderer</a></li>
+				<li class="col s12 m1"><a href="#" ui-sref="home">Explore</a></li>
+				<li class="col s12 m2"><a href="#" ui-sref="bucket">Bucket Lista</a></li>
+				<li class="col s12 m2 offset-m6"><a href="#" ui-sref="login">Log-in/Register</a></li>
+				</ul>
+
+				<ul id="slide-out" class="side-nav">
+				    <li class="col s12 m1"><a href="#" ui-sref="/">Wanderer</a></li>
+				    <li><div class="divider"></div></li>
+				    <li class="col s12 m1"><a href="#" ui-sref="home">Explore</a></li>
+				    <li><div class="divider"></div></li>
+				    <li class="col s12 m2"><a href="#" ui-sref="bucket">Bucket Lista</a></li>
+				    <li><div class="divider"></div></li>
+				    <li class="col s12 m2 offset-m6"><a href="#" ui-sref="login">Log-in/Register</a></li>
+			  </ul>
+			  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+		  </div>
+	  </nav>
 
 		<section class="userWidget headerElement">
 		    <div ng-if="auth.user">
