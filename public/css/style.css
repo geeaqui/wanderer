@@ -26,3 +26,18 @@
 	height:100px;
 	float: right;
 }
+
+/**********************Navigation*******************/
+#nav-bar{
+	background-color: #666666;
+}
+
+#wanderer-nav{
+	background-color: #666666;
+	text-align: center;
+	
+}
+
+#wanderer-nav a{
+	color:#fff;
+}
