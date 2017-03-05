@@ -2,7 +2,7 @@ angular
 	.module('wanderers')
 	.controller('tripController', tripController)
 
-function tripController(Trips, $stateParams, $state, Auth){
+function tripController(Trips, $stateParams, $state, Auth, User){
 	var self = this;
 	
 	//Objects Array
@@ -111,11 +111,20 @@ function tripController(Trips, $stateParams, $state, Auth){
 	self.addToList = function (flight) {
 		console.log(flight)
 		var id = Auth.$getAuth().uid
-		Trips.add(flight,  )
+		Trips.add(flight,  id)
 			.then(function(){
 				$state.go('home');
 			})
 	} 
+
+	self.getList = function (){
+		var id = $stateParams.id
+		Trips.show(id)
+			.then(function(response){
+				console.log(response.data);
+			})
+
+	}
 
 } 
 

@@ -20,12 +20,12 @@ var authRequired = {
 function MainRouter($stateProvider, $urlRouterProvider){
 	$stateProvider
 		.state('home',{
-			url:'/',
+			url:'/explore',
 			templateUrl:'/states/home.html',
 			resolve: authRequired
 		})
 		.state('bucket',{
-			url:'/wanderers',
+			url:'/bucket-list',
 			templateUrl:'/states/bucket.html',
 			resolve: authRequired
 		})

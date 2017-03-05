@@ -8,7 +8,10 @@ function tripFactory(API, $http){
       		return $http.get(API +'/destination/' + searchTerm )
     	},
     	 add: function (flight, id) {
-       		return $http.post(API + '/destination/' + id, flight)
-     	}
+       	return $http.post(API + '/destination/' + id, flight)
+     	},
+        show: function(id){
+          return $http.get(API + '/users/' + id)
+      }
 	}
 }

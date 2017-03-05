@@ -9,8 +9,13 @@ router.route('/destination/:searchTerm')
 
 router.route('/destination/:id')
 	.post(destinationController.add);
+
+
 //user route
 router.route('/users')
 	.post(userController.create)
+
+router.route('/users/:id')
+	.get(userController.show);
 
 module.exports = router;
