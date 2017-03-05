@@ -100,6 +100,57 @@ span{
 	color:#fff;
 }
 
+#github-icon{
+	background:url('../images/GithubBW.png') no-repeat;
+	background-size: cover;
+	height:50px;
+	width:50px;
+	position: relative;
+	top:-70px;
+	border:5px solid #fff;
+	border-radius: 100%;
+}
+
+#github-icon:hover{
+	background:url('../images/Github.png') no-repeat;
+	background-size: cover;
+	height:50px;
+	width:50px;
+	position: relative;
+}
+
+@media screen and (min-width: 800px) {
+	#github-icon{
+        top:-400px;
+	}
+}
+
+#linkedin-icon{
+	background:url('../images/Linkedin.png') no-repeat;
+	background-size: cover;
+	height:50px;
+	width:50px;
+	position: relative;
+	top:-50px;
+	border:5px solid #fff;
+	border-radius: 100%;
+	margin-bottom: -50px;
+}
+
+#linkedin-icon:hover{
+	background:url('../images/LinkedinC.png') no-repeat;
+	background-size: cover;
+	height:50px;
+	width:50px;
+	position: relative;
+}
+
+@media screen and (min-width: 800px) {
+	#linkedin-icon{
+        top:-380px;
+	}
+}
+
 /*********************Explore*************************/
 #searchTrip{
 	border:5px solid #666666;

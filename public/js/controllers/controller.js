@@ -20,6 +20,7 @@ function tripController(Trips, $stateParams, $state, Auth, User){
 	self.flightQuery = [];
 
 	self.getTrips = function(){
+		self.reset();
 		Trips.getAll(self.searchTerm)
 			.then(function(response){
 				console.log(response)
@@ -124,6 +125,18 @@ function tripController(Trips, $stateParams, $state, Auth, User){
 				console.log(response.data);
 			})
 
+	}
+
+	self.reset = function(){
+
+		self.outboundOrigin = "";
+		self.outboundDestination = "";
+		self.outboundCarrier = "";
+		self.outboundDepartureDate="";
+	  	self.inboundOrigin ="";
+	  	self.inboundDestination = "";
+	  	self.inboundCarrier = "";
+	  	self.inboundDepartureDate ="";
 	}
 
 } 
