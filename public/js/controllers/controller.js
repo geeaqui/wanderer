@@ -142,7 +142,7 @@ function tripController(Trips, $stateParams, $state, Auth, User){
 		var uid = Auth.$getAuth().uid;
 		Trips.delete(flightId, uid)
 			.then(function(response){
-				console.log(response);
+				$state.go('home');
 			})
 			.catch(function(err) {
 				console.log(err);
