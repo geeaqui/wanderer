@@ -1,5 +1,5 @@
 
-var Flights = require('../models/flights');
+var Flight = require('../models/flights');
 var User = require('../models/user');
 
 function indexDestination(req, res){
@@ -35,7 +35,7 @@ function addFlights(req, res){
 	var uid = req.params.id
 	User.findOne({uid: uid}, function (err, user) {
 
-		var flights = new Flights(req.body);
+		var flights = new Flight(req.body);
 	  	flights.save(function(error) {
 	    	if(error) res.json({messsage: 'Could not add flights b/c:' + error});
 
@@ -48,7 +48,30 @@ function addFlights(req, res){
 	})
 }
 
+function deleteFlight(req, res){
+	var uid = req.params.uid;
+	var flightId = req.params.id;
+
+  	User.findOne({uid:uid}, function(err, user){
+  		if(err) res.json({message: 'Could not delete list b/c: '+ err});
+
+  		user.destinations.filter(function(dest) {
+  			return (this !== flightId);
+  		})
+
+  		user.save(function(err, user) {
+  			if(err) res.json({message: 'Could not delete list b/c: '+ err});
+  			Flight.findByIdAndRemove(flightId, function(err, flight) {
+  				if(err) res.json({message: 'Could not delete list b/c: '+ err});
+  				res.json({message: "Flight deleted!"});
+  			})
+  		})
+  	})
+}
+
+
 module.exports = {
 	index : indexDestination,
-	add : addFlights
+	add : addFlights,
+	delete: deleteFlight
 }

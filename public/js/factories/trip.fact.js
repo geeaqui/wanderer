@@ -12,6 +12,9 @@ function tripFactory(API, $http){
      	},
         show: function(id){
           return $http.get(API + '/users/' + id)
+      },
+        delete: function(id, uid){
+          return $http.delete(API + '/users/' + uid + '/destination/' + id)
       }
 	}
 }

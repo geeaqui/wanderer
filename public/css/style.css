@@ -152,7 +152,13 @@ span{
 }
 
 #login-li, #signOut-li{
-	background-color: #093c8e;
+	//background-color: #093c8e;
+	background-color: #26a69a;
+}
+
+#signOut-li img{
+	width:30px;
+	height:30px;
 }
 
 /*********************Explore*************************/
@@ -183,4 +189,21 @@ span{
 	margin-top: 5px;
 	background-color: #30504d;
 	border-radius: 10px 10px 0 0;
+}
+
+
+
+/***********************BucketList***********************/
+#userDetails .firstName, #userDetails .lastName{
+	text-transform: uppercase;
+}
+
+#bucketFlights{
+	border:5px solid #666666;
+	margin-bottom: 25px;
+	border-radius: 10px;
+}
+
+.bucket-column{
+	margin-right: 100px;
 }

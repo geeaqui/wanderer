@@ -9,7 +9,9 @@ router.route('/destination/:searchTerm')
 
 router.route('/destination/:id')
 	.post(destinationController.add);
-
+	
+router.route('/users/:uid/destination/:id')
+	.delete(destinationController.delete);
 
 //user route
 router.route('/users')

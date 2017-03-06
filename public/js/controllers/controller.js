@@ -119,14 +119,14 @@ function tripController(Trips, $stateParams, $state, Auth, User){
 
 	self.getList = function (){
 		self.bucketList = [];
-		// var id = $stateParams.id
+
 		var id = Auth.$getAuth().uid
 		console.log(id)
 		Trips.show(id)
 			.then(function(response){
 				console.log(response.data);
 				self.user = response.data;
-				//console.log(self.userBucket[0]);
+	
 				for(var i =0; i < response.data.destinations.length; i++){
 					console.log(response.data.destinations[i]);
 					self.bucketList.push(response.data.destinations[i]);
@@ -137,6 +137,18 @@ function tripController(Trips, $stateParams, $state, Auth, User){
 			})
 
 	}
+
+	self.remove = function(flightId) {
+		var uid = Auth.$getAuth().uid;
+		Trips.delete(flightId, uid)
+			.then(function(response){
+				console.log(response);
+			})
+			.catch(function(err) {
+				console.log(err);
+			})
+	}
+
 
 	// self.reset = function(){
 
