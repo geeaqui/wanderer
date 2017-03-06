@@ -1,5 +1,30 @@
 <h1>Your Bucket List</h1>
 
 <section ng-init="trips.getList()">
-	
+<div>
+	<p>Name: {{trips.user.first_name}}</p>
+	<p>Surname: {{trips.user.last_name}}</p>
+
+	<ul class="row">
+		<li ng-repeat="bucket in trips.bucketList">
+		 <div id="flightTrips" class="col s12 m3">
+    		<div class="col m12">
+		  	  	<h5>Outbound:</h5>
+  	  			<p>Origin: {{bucket.outboundOrigin}}</p>
+  	  			<p>Destination: {{bucket.outboundDestination}}</p>
+  	  			<p>Carrier: {{bucket.outboundCarrier}}</p>
+  	  			<p>Departure Date: {{bucket.outboundDepartureDate}}</p>
+    		</div>
+    		<div class="col m12">
+  	  			<h5>Inbound:</h5>
+  	  			<p>Origin: {{bucket.inboundOrigin}}</p>
+  	  			<p>Destination: {{bucket.inboundDestination}}</p>
+  	  			<p>Carrier: {{bucket.inboundCarrier}}</p>
+  	  			<p>Departure Date: {{bucket.inboundDepartureDate }}</p>
+    		</div>
+    	</div>
+	</ul>
+</div>
+
+
 </section>
