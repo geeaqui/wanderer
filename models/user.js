@@ -13,10 +13,10 @@ var UserSchema = new mongoose.Schema({
 		type:String,
 		required:true
 	},
-	destinations:{
-		type: [mongoose.Schema.Types.ObjectId], 
+	destinations: [{
+		type: mongoose.Schema.Types.ObjectId, 
 		ref: "Flights"
-	}
+	}]
 });
 
 module.exports = mongoose.model('User' , UserSchema);

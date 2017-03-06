@@ -20,7 +20,6 @@ function tripController(Trips, $stateParams, $state, Auth, User){
 	self.flightQuery = [];
 
 	self.getTrips = function(){
-		self.reset();
 		Trips.getAll(self.searchTerm)
 			.then(function(response){
 				console.log(response)
@@ -119,25 +118,30 @@ function tripController(Trips, $stateParams, $state, Auth, User){
 	} 
 
 	self.getList = function (){
-		var id = $stateParams.id
+		// var id = $stateParams.id
+		var id = Auth.$getAuth().uid
+		console.log(id)
 		Trips.show(id)
 			.then(function(response){
 				console.log(response.data);
 			})
+			.catch(function (err) {
+				console.log(err)
+			})
 
 	}
 
-	self.reset = function(){
+	// self.reset = function(){
 
-		self.outboundOrigin = "";
-		self.outboundDestination = "";
-		self.outboundCarrier = "";
-		self.outboundDepartureDate="";
-	  	self.inboundOrigin ="";
-	  	self.inboundDestination = "";
-	  	self.inboundCarrier = "";
-	  	self.inboundDepartureDate ="";
-	}
+	// 	self.outboundOrigin = "";
+	// 	self.outboundDestination = "";
+	// 	self.outboundCarrier = "";
+	// 	self.outboundDepartureDate="";
+	//   	self.inboundOrigin ="";
+	//   	self.inboundDestination = "";
+	//   	self.inboundCarrier = "";
+	//   	self.inboundDepartureDate ="";
+	// }
 
 } 
 

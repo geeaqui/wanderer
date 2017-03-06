@@ -151,6 +151,10 @@ span{
 	}
 }
 
+#login-li, #signOut-li{
+	background-color: #093c8e;
+}
+
 /*********************Explore*************************/
 #searchTrip{
 	border:5px solid #666666;

@@ -44,11 +44,8 @@ function addFlights(req, res){
 	    		if(err) res.json({messsage: 'Could not add flights b/c:' + err});
 	    		res.json({flights: flights});
 	    	})
-
 	  	});
-
 	})
-
 }
 
 module.exports = {

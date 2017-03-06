@@ -12,13 +12,15 @@ function createUser(req, res) {
 }
 
 function showUser(req, res){
-	// User.findById(req.user._id).populate('destinations').exec(function(err, user){
-	// 	//if(err) return res.status(500).send(err);
-	// 	console.log(user.destinations);
-	// 	res.json(user);
-	// });
-	var uid = req.params._id
-	console.log(User.findById({uid: uid}).populate('destinations'));
+	console.log(req.params.id)
+	User.findOne({uid: req.params.id}).populate('destinations').exec(function(err, user){
+		//if(err) return res.status(500).send(err);
+		console.log('user: ', user);
+		console.log(err)
+		res.json(user);
+	});
+	// var uid = req.params._id
+	// console.log(User.findById({uid: uid}).populate('destinations'));
 }
 
 module.exports = {
