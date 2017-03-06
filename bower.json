@@ -1,0 +1,17 @@
+{
+  "name": "wanderer",
+  "description": "application to help wanderer plan their journeys",
+  "main": "app.js",
+  "authors": [
+    "Gerald Aqui"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/geeaqui/wanderer",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
