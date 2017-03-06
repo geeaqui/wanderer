@@ -37,7 +37,7 @@ function addFlights(req, res){
 
 		var flights = new Flight(req.body);
 	  	flights.save(function(error) {
-	    	if(error) res.json({messsage: 'Could not add flights b/c:' + error});
+	    	if(error) return res.json({messsage: 'Could not add flights b/c:' + error});
 
 	    	user.destinations.push(flights._id)
 	    	user.save(function (err) {
