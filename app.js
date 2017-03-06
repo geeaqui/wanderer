@@ -9,7 +9,7 @@ var request = require('request');
 
 
 // connect to the database
-mongoose.connect(process.env.MONGOLAB_URI ||'mongodb://localhost/destinations');
+mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/destinations');
 
 // body parser for form data
 app.use(bodyParser.urlencoded({ extended: false }));
