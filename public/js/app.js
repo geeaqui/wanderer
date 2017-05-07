@@ -1,5 +1,5 @@
 angular
-	.module('wanderers',['ui.router','firebase','ngResource'])
+	.module('wanderers',['ui.router', 'firebase', 'ngResource'])
 	.config(MainRouter)
 	.constant('API', '/api')
 	.run(AuthCatcher)

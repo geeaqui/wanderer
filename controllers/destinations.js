@@ -12,6 +12,7 @@ function indexDestination(req, res){
 	var destination = req.params.searchTerm
 	var options = {  
 	    url: 'http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/'+country+'/'+currency+'/en-US£/uk/'+destination+'/anytime/anytime?apikey=' + apiKey,
+	    //url: 'https://medium.com/_/api/tags/sparta-global/stream?limit=25',
 	    method: 'GET',
 	    headers: {
 	        'Accept': 'application/json',
@@ -69,9 +70,21 @@ function deleteFlight(req, res){
   	})
 }
 
+function showFlight(req, res){
+	var uid = req.params.uid;
+	var flightId = req.params.id;
+
+	User.findOne({uid:uid}, function(err, user){
+		if(err) res.json({message: 'Could not delete list b/c: ' + err});
+
+		console.log(user.destinations);
+	})
+
+}
 
 module.exports = {
 	index : indexDestination,
 	add : addFlights,
-	delete: deleteFlight
+	delete: deleteFlight,
+	display: showFlight
 }

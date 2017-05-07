@@ -7,11 +7,15 @@ var destinationController = require('../controllers/destinations');
 router.route('/destination/:searchTerm')
 	.get(destinationController.index);
 
+router.route('/destination')
+	.get(destinationController.index);
+
 router.route('/destination/:id')
 	.post(destinationController.add);
 	
 router.route('/users/:uid/destination/:id')
-	.delete(destinationController.delete);
+	.delete(destinationController.delete)
+	.get(destinationController.display);
 
 //user route
 router.route('/users')

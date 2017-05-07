@@ -33,6 +33,8 @@ function tripController(Trips, $stateParams, $state, Auth, User){
 				self.quotesFound = self.quotes.length;
 
 				console.log(self.tripQuery);
+			//})
+		
 				/***************** InBound Data ****************/
 				for(var i = 0; i<self.quotes.length;i++){
 					for(var j= 0; j < self.places.length; j++){
@@ -107,7 +109,8 @@ function tripController(Trips, $stateParams, $state, Auth, User){
 					}
 				}				
 			})
-	}
+}
+
 	self.addToList = function (flight) {
 		console.log(flight)
 		var id = Auth.$getAuth().uid
@@ -138,6 +141,11 @@ function tripController(Trips, $stateParams, $state, Auth, User){
 
 	}
 
+	self.destination = function (){
+		var uid = Auth.$getAuth().uid;
+		Trips.get(flightid, uid)
+	}
+
 	self.remove = function(flightId) {
 		var uid = Auth.$getAuth().uid;
 		Trips.delete(flightId, uid)
@@ -149,18 +157,9 @@ function tripController(Trips, $stateParams, $state, Auth, User){
 			})
 	}
 
-
-	// self.reset = function(){
-
-	// 	self.outboundOrigin = "";
-	// 	self.outboundDestination = "";
-	// 	self.outboundCarrier = "";
-	// 	self.outboundDepartureDate="";
-	//   	self.inboundOrigin ="";
-	//   	self.inboundDestination = "";
-	//   	self.inboundCarrier = "";
-	//   	self.inboundDepartureDate ="";
-	// }
+	self.getData = function(){
+		Trips.getData();
+	}
 
 } 
 

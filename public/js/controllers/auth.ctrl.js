@@ -25,6 +25,7 @@ function authenticationController(Auth, $state, User){
             }, function(user, err) {
                 self.err = err.err;
                 resetCredentials();
+                $state.go('wanderer');
             })
 			resetCredentials();
 			console.log(user);
