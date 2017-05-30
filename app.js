@@ -36,10 +36,15 @@ app.listen(process.env.PORT || 3000, function(){
 	console.log('app is listening at port 3000');
 });
 
-
-
-
-
+module.exports = app;
+// module.exports = {
+// 	sayHello: function(){
+// 		return 'hello';
+// 	},
+// 	addNumbers: function(value1, value2){
+// 		return value1 + value2;
+// 	}
+// }
 
 
 
